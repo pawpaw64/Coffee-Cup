@@ -1,4 +1,4 @@
-# ☕ CoffeeBee — Coffee Shop Finder
+# ☕ CoffeeCup — Coffee Shop Finder
 
 > A location-aware web application that helps users discover nearby coffee shops with interactive maps, rich venue details, and smart filtering.
 
@@ -40,11 +40,6 @@ The project was built as an open-source, zero-backend web app; all data is fetch
 - **Café Cards** — Grid of result cards showing photo, name, address, star rating, price tier, and open/closed status.
 - **Venue Popup** — Detailed popup on the map including photo gallery, hours by day, most recent customer review, phone, and website link.
 - **Filter & Sort Panel** — Slide-out panel (toggle button in top-right corner) with:
-  - Sort by: Name · Rating · Distance · Price (low→high or high→low)
-  - Filter by price tier: `$` · `$$` · `$$$` · `$$$$`
-  - Filter by minimum rating (slider, 0–10)
-- **Hover Interaction** — Hovering a card highlights its map marker, and vice-versa.
-- **No-Results State** — Friendly empty state with guidance when no cafés match the active filters.
 - **Responsive Design** — Adapts to mobile screens by stacking the results list above the map in a 50/50 split.
 - **URL State** — The search query is stored in the URL (`?search=...`) so results pages are bookmarkable and shareable.
 
@@ -122,36 +117,12 @@ const FOURSQUARE_API_KEY = 'YOUR_FOURSQUARE_API_KEY_HERE';
 
 > ⚠️ **Security note:** Because this is a client-side app the key is visible in browser DevTools. For production use, route Foursquare requests through a server-side proxy so the key is never exposed to end users.
 
-### 3. Serve the Application
-
-**Option A — Python (built-in)**
-```bash
-# Python 3
-python -m http.server 8080
-# Then open http://localhost:8080 in your browser
-```
-
-**Option B — Node.js (`http-server`)**
-```bash
-npx http-server -p 8080
-# Then open http://localhost:8080 in your browser
-```
-
-**Option C — VS Code Live Server**  
-Install the [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), right-click `index.html`, and choose **Open with Live Server**.
-
-### 4. Use the App
-
-1. Type a city or address into the search bar on the landing page and press **Search** or hit `Enter`.
-2. Browse the café cards on the results page, or explore the map.
-3. Click the coffee-cup icon button (top-right) to open the filter panel.
-4. Click any card or map marker to see full venue details.
 
 ---
 
 ## API Overview
 
-CoffeeBee consumes three external APIs, all called directly from the browser.
+CoffeeCup consumes three external APIs, all called directly from the browser.
 
 ### Nominatim (Geocoding)
 
